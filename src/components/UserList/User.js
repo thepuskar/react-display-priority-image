@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Loader from "../Loader";
 
-const defaultImage = "https://via.placeholder.com/350x150";
+import { formatUsers } from "../../utils";
 const API_URL =
   "https://gist.githubusercontent.com/roxcity/300697399059a6f54a983d1e9af5f459/raw/d81a2c42f8de6ca439f3cd3a5b0e809fd34f31bc/users.json";
 
@@ -20,12 +20,7 @@ const User = () => {
           setLoading(false);
           return;
         }
-        const users = res.data.map((user) => {
-          user.currentSrc = 0;
-          user.photos.push({ url: defaultImage });
-          return user;
-        });
-        setUsers(users);
+        setUsers(formatUsers(res.data));
         setLoading(false);
       })
       .catch((err) => {
