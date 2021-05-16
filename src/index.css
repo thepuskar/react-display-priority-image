@@ -69,3 +69,13 @@ body {
     transform: rotate(360deg);
   }
 }
+.error {
+  color: #d8000c;
+  background-color: #ffd2d2;
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25em;
+}

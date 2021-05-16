@@ -48,7 +48,7 @@ const User = () => {
   return (
     <div className="user">
       {loading && <Loader />}
-      {error && <p>{error}</p>}
+      {error && <p className="error">{error}</p>}
       {users.map(({ firstName, lastName, photos, currentSrc }, index) => {
         return (
           <div className="card" key={index}>
