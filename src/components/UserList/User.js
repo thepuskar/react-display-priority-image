@@ -51,7 +51,7 @@ const User = () => {
       {error && <p>{error}</p>}
       {users.map(({ firstName, lastName, photos, currentSrc }, index) => {
         return (
-          <div className="card">
+          <div className="card" key={index}>
             <img
               onError={() => handleError(index)}
               src={photos[currentSrc].url}
